@@ -17,6 +17,12 @@ public class ProductsController : Controller
         return View(Products);
     }
 
+    public IActionResult Details(int id)
+    {
+        var product = Products.Find(p => p.Id == id);
+        return product == null ? NotFound() : View(product);
+    }
+
     private List<ProductModel>? GetProducts()
     {
         return new List<ProductModel>();
