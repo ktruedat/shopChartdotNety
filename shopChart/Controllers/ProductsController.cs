@@ -14,7 +14,7 @@ public class ProductsController : Controller
     
     public IActionResult Index()
     {
-        return View();
+        return View(Products);
     }
 
     private List<ProductModel>? GetProducts()
