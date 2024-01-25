@@ -51,8 +51,15 @@ public class ProductContext : DbContext
 
         Products.Add(new Product
         {
-            Id = 5, Name = "LEGION 5 PRO", Price = 1200.00M, IsActive = false,
-            Description = "SOLD OUT"
+            Id = 5, Name = "HUMAN WATER", Price = 999999, IsActive = true,
+            Description = "HUMANLY WATER"
         });
+        Products.Add(new Product
+        {
+            Id = 6, Name = "INHUMAN WATER", Price = 1, IsActive = true,
+            Description = "INHUMANLY WATER"
+        });
+
+        SaveChanges();
     }
 }
