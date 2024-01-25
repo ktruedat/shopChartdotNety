@@ -24,3 +24,14 @@
 /home/ktruedat/Projects/RiderProjects/shopChart/shopChart/obj/Debug/net6.0/ref/shopChart.dll
 /home/ktruedat/Projects/RiderProjects/shopChart/shopChart/obj/Debug/net6.0/shopChart.pdb
 /home/ktruedat/Projects/RiderProjects/shopChart/shopChart/obj/Debug/net6.0/shopChart.genruntimeconfig.cache
+/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
+/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/bin/Debug/net6.0/Npgsql.dll
+/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/bin/Debug/net6.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/bin/Debug/net6.0/System.Diagnostics.DiagnosticSource.dll
+/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/obj/Debug/net6.0/shopChart.csproj.CopyComplete
+/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/bin/Debug/net6.0/Humanizer.dll
+/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll

@@ -1,8 +1,29 @@
 {
   "version": 2,
-  "dgSpecHash": "B2pJOCPr1W/1IKYXn8u3H2QdZgkaOLjH0LOLARHhiGVaz62z/x0d5OPP3LnmYe61cz4adA6wr9+D4ryNPwavuQ==",
+  "dgSpecHash": "4y1nGEB5Df452J1Iaj3tFS0Z3zqhbbOsUfOPueaarZh/ep6wTt63roXPAy0BC5CKolSbRV2d8RojBhzTrCTXZA==",
   "success": true,
   "projectFilePath": "/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/shopChart.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/ktruedat/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/microsoft.entityframeworkcore/6.0.26/microsoft.entityframeworkcore.6.0.26.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.26/microsoft.entityframeworkcore.abstractions.6.0.26.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.26/microsoft.entityframeworkcore.analyzers.6.0.26.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/microsoft.entityframeworkcore.design/6.0.26/microsoft.entityframeworkcore.design.6.0.26.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/microsoft.entityframeworkcore.relational/6.0.26/microsoft.entityframeworkcore.relational.6.0.26.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/microsoft.extensions.caching.abstractions/6.0.0/microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/microsoft.extensions.caching.memory/6.0.1/microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/microsoft.extensions.configuration.abstractions/6.0.0/microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/microsoft.extensions.dependencyinjection/6.0.1/microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/microsoft.extensions.logging/6.0.0/microsoft.extensions.logging.6.0.0.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/npgsql/6.0.10/npgsql.6.0.10.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/npgsql.entityframeworkcore.postgresql/6.0.22/npgsql.entityframeworkcore.postgresql.6.0.22.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/system.diagnostics.diagnosticsource/6.0.1/system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
