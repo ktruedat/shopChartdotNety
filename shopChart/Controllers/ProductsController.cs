@@ -50,13 +50,13 @@ public class ProductsController : Controller
     {
         if (id == null)
         {
-            return View("NotFound");
+            return NotFound();
         }
 
         var productModel = await _logic.GetProductById(id.Value);
         if (productModel == null)
         {
-            return View("NotFound");
+            return NotFound();
         }
 
         return View(productModel);
@@ -68,7 +68,7 @@ public class ProductsController : Controller
         [Bind("Id,Name,Description,Price,IsActive")]
         ProductModel product)
     {
-        if (id != product.Id) return View("NotFound");
+        if (id != product.Id) return NotFound();
 
         if (ModelState.IsValid)
         {
@@ -81,10 +81,10 @@ public class ProductsController : Controller
 
     public async Task<IActionResult> Delete(int? id)
     {
-        if (id == null) return View("NotFound");
+        if (id == null) return NotFound();
 
         var productModel = await _logic.GetProductById(id.Value);
-        if (productModel == null) return View("NotFound");
+        if (productModel == null) return NotFound();
 
         return View(productModel);
 

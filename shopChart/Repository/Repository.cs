@@ -24,7 +24,7 @@ public class Repository : IRepository
 
     public async Task<Product> AddProductAsync(Product product)
     {
-        _context.Products.Add(product);
+        _context.Add(product);
         await _context.SaveChangesAsync();
         return product;
     }
