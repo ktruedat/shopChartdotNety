@@ -1,20 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
+using shopChart.Logic;
 using shopChart.Models;
 
 namespace shopChart.Controllers;
 
 public class ProductsController : Controller
 {
-    public List<ProductModel> Products { get; set; }
+    private readonly IProductLogic _logic;
+
+    // public List<ProductModel> Products { get; set; }
     
-    public ProductsController()
+    public ProductsController(IProductLogic logic)
     {
-        Products = GetProducts();
+        _logic = logic;
+        // Products = GetProducts();
     }
     
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View(Products);
+        var products = await _logic.GetAllProducts();
+        return View(products);
     }
 
     public IActionResult Details(int id)
