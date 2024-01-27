@@ -3,7 +3,7 @@ using shopChart.Repository;
 
 namespace shopChart.Logic;
 
-public class ProductLogic
+public class ProductLogic : IProductLogic
 {
     private readonly IRepository _repository;
 
@@ -33,5 +33,11 @@ public class ProductLogic
     public async Task RemoveProduct(int id)
     {
         await _repository.RemoveProductAsync(id);
+    }
+
+    public async Task UpdateProduct(ProductModel productToUpdate)
+    {
+        var productToSave = productToUpdate.ToProduct();
+        await _repository.UpdateProductAsync(productToSave);
     }
 }

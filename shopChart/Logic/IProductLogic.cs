@@ -5,8 +5,8 @@ namespace shopChart.Logic;
 public interface IProductLogic
 {
     Task<List<ProductModel>> GetAllProducts();
-    Task<ProductModel?> GetProductById();
+    Task<ProductModel?> GetProductById(int productId);
     Task AddNewProduct(ProductModel productToAdd);
     Task RemoveProduct(int id);
-    Task UpdateProduct(ProductModel productToRemove);
+    Task UpdateProduct(ProductModel productToUpdate);
 }

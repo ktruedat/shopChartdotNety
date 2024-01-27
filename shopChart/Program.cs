@@ -1,12 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using shopChart.Data;
+using shopChart.Logic;
+using shopChart.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the DI container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ProductContext>();
+builder.Services.AddScoped<IRepository, Repository>();
+builder.Services.AddScoped<IProductLogic, ProductLogic>();
 
 var app = builder.Build();
 

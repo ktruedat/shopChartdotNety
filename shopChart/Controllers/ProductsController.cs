@@ -22,9 +22,9 @@ public class ProductsController : Controller
         return View(products);
     }
 
-    public IActionResult Details(int id)
+    public async Task<IActionResult> Details(int id)
     {
-        var product = Products.Find(p => p.Id == id);
+        var product = await  _logic.GetProductById(id);
         return product == null ? NotFound() : View(product);
     }
 
