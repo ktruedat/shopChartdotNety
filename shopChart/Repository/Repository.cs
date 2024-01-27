@@ -12,7 +12,7 @@ public class Repository : IRepository
         this._context = context;
     }
 
-    public async Task<List<Product>> GetAllProductAsync()
+    public async Task<List<Product>> GetAllProductsAsync()
     {
         return await _context.Products.ToListAsync();
     }
