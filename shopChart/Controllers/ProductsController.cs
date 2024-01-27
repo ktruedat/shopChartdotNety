@@ -28,6 +28,76 @@ public class ProductsController : Controller
         return product == null ? NotFound() : View(product);
     }
 
+    public IActionResult Create()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create([Bind("Id,Name,Description,Price,IsActive")] ProductModel product)
+    {
+        if (ModelState.IsValid)
+        {
+            await _logic.AddNewProduct(product);
+            return RedirectToAction(nameof(Index));
+        }
+
+        return View(product);
+    }
+
+    public async Task<IActionResult> Edit(int? id)
+    {
+        if (id == null)
+        {
+            return View("NotFound");
+        }
+
+        var productModel = await _logic.GetProductById(id.Value);
+        if (productModel == null)
+        {
+            return View("NotFound");
+        }
+
+        return View(productModel);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(int id,
+        [Bind("Id,Name,Description,Price,IsActive")]
+        ProductModel product)
+    {
+        if (id != product.Id) return View("NotFound");
+
+        if (ModelState.IsValid)
+        {
+            await _logic.UpdateProduct(product);
+            return RedirectToAction(nameof(System.Index));
+        }
+
+        return View(product);
+    }
+
+    public async Task<IActionResult> Delete(int? id)
+    {
+        if (id == null) return View("NotFound");
+
+        var productModel = await _logic.GetProductById(id.Value);
+        if (productModel == null) return View("NotFound");
+
+        return View(productModel);
+
+    }
+
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        await _logic.RemoveProduct(id);
+        return RedirectToAction(nameof(Index));
+    }
+
     private List<ProductModel>? GetProducts()
     {
         return new List<ProductModel>();
