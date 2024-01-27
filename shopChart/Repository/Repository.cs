@@ -43,7 +43,19 @@ public class Repository : IRepository
                 // product exists and update exception is real
                 throw;
             }
+            // caught and swallowed exception  can occur if the other update was a delete
 
+        }
+    }
+
+    public async Task RemoveProductAsync(int productIdToRemove)
+    {
+        var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == productIdToRemove);
+
+        if (product != null)
+        {
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
         }
     }
 }
