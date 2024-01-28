@@ -7,12 +7,14 @@ namespace shopChart.Controllers;
 public class ProductsController : Controller
 {
     private readonly IProductLogic _logic;
+    private readonly ILogger<ProductsController> _logger;
 
     // public List<ProductModel> Products { get; set; }
     
-    public ProductsController(IProductLogic logic)
+    public ProductsController(IProductLogic logic, ILogger<ProductsController> logger)
     {
         _logic = logic;
+        _logger = logger;
         // Products = GetProducts();
     }
     
@@ -25,7 +27,12 @@ public class ProductsController : Controller
     public async Task<IActionResult> Details(int id)
     {
         var product = await  _logic.GetProductById(id);
-        return product == null ? View("NotFound") : View(product);
+        if (product == null)
+        {
+            _logger.LogInformation("Details not found for id {id}", id);
+            return View("NotFound");
+        }
+        return  View(product);
     }
 
     public IActionResult Create()
@@ -50,12 +57,14 @@ public class ProductsController : Controller
     {
         if (id == null)
         {
+            _logger.LogInformation("No id passed for edit");
             return View("NotFound");
         }
 
         var productModel = await _logic.GetProductById(id.Value);
         if (productModel == null)
         {
+            _logger.LogInformation("Edit details not found for id {id}", id);
             return View("NotFound");
         }
 
