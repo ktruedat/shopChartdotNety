@@ -25,7 +25,7 @@ public class ProductsController : Controller
     public async Task<IActionResult> Details(int id)
     {
         var product = await  _logic.GetProductById(id);
-        return product == null ? NotFound() : View(product);
+        return product == null ? View("NotFound") : View(product);
     }
 
     public IActionResult Create()
@@ -50,13 +50,13 @@ public class ProductsController : Controller
     {
         if (id == null)
         {
-            return NotFound();
+            return View("NotFound");
         }
 
         var productModel = await _logic.GetProductById(id.Value);
         if (productModel == null)
         {
-            return NotFound();
+            return View("NotFound");
         }
 
         return View(productModel);
@@ -68,7 +68,7 @@ public class ProductsController : Controller
         [Bind("Id,Name,Description,Price,IsActive")]
         ProductModel product)
     {
-        if (id != product.Id) return NotFound();
+        if (id != product.Id) return View("NotFound");
 
         if (ModelState.IsValid)
         {
@@ -81,10 +81,10 @@ public class ProductsController : Controller
 
     public async Task<IActionResult> Delete(int? id)
     {
-        if (id == null) return NotFound();
+        if (id == null) return View("NotFound");
 
         var productModel = await _logic.GetProductById(id.Value);
-        if (productModel == null) return NotFound();
+        if (productModel == null) return View("NotFound");
 
         return View(productModel);
 
