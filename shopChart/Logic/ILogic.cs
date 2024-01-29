@@ -15,7 +15,7 @@ public interface IProductLogic
 public interface ICategoryLogic
 {
     Task<List<CategoryModel>> GetAllCategories();
-    Task<CategoryModel> GetCategoryById(int categoryId);
+    Task<CategoryModel?> GetCategoryById(int categoryId);
     Task AddNewCategory(CategoryModel categoryToAdd);
     Task RemoveCategory(int id);
     Task UpdateCategory(CategoryModel categoryToUpdate);
