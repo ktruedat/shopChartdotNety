@@ -8,12 +8,17 @@ public class ProductContext : DbContext
     public DbSet<Product> Products => Set<Product>();
     public DbSet<Category> Categories => Set<Category>();
 
+    public string DbConnString { get; set; }
+
+    public ProductContext(IConfiguration config)
+    {
+        DbConnString = config.GetConnectionString("PostgreSQLConnString");
+    }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
         {
-            var connectionString = "Host=localhost;Port=5432;Database=shopchart;Username=postgres;Password=admin;";
-            var conn = new NpgsqlConnection(connectionString);
+            var conn = new NpgsqlConnection(DbConnString);
             optionsBuilder.UseNpgsql(conn);
         }
     }
