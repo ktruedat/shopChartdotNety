@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ProductContext>();
-builder.Services.AddScoped<IRepository, Repository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductLogic, ProductLogic>();
 
 var app = builder.Build();

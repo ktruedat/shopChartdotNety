@@ -3,13 +3,13 @@ using shopChart.Data;
 
 namespace shopChart.Repository;
 
-public class Repository : IRepository
+public class ProductRepository : IProductRepository
 {
     private readonly ProductContext _context;
 
-    public Repository(ProductContext context)
+    public ProductRepository(ProductContext context)
     {
-        this._context = context;
+        _context = context;
     }
 
     public async Task<List<Product>> GetAllProductsAsync()

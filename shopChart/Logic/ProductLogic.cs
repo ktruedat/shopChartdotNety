@@ -5,39 +5,39 @@ namespace shopChart.Logic;
 
 public class ProductLogic : IProductLogic
 {
-    private readonly IRepository _repository;
+    private readonly IProductRepository _productRepository;
 
-    public ProductLogic(IRepository repository)
+    public ProductLogic(IProductRepository productRepository)
     {
-        _repository = repository;
+        _productRepository = productRepository;
     }
 
     public async Task<List<ProductModel>> GetAllProducts()
     {
-        var products = await _repository.GetAllProductsAsync();
+        var products = await _productRepository.GetAllProductsAsync();
         return products.Select(ProductModel.FromProduct).ToList();
     }
 
     public async Task<ProductModel?> GetProductById(int id)
     {
-        var product = await _repository.GetProductByIdAsync(id);
+        var product = await _productRepository.GetProductByIdAsync(id);
         return product == null ? null : ProductModel.FromProduct(product);
     }
 
     public async Task AddNewProduct(ProductModel productToAdd)
     {
         var productToSave = productToAdd.ToProduct();
-        await _repository.AddProductAsync(productToSave);
+        await _productRepository.AddProductAsync(productToSave);
     }
 
     public async Task RemoveProduct(int id)
     {
-        await _repository.RemoveProductAsync(id);
+        await _productRepository.RemoveProductAsync(id);
     }
 
     public async Task UpdateProduct(ProductModel productToUpdate)
     {
         var productToSave = productToUpdate.ToProduct();
-        await _repository.UpdateProductAsync(productToSave);
+        await _productRepository.UpdateProductAsync(productToSave);
     }
 }
