@@ -6,6 +6,7 @@ namespace shopChart.Data;
 public class ProductContext : DbContext
 {
     public DbSet<Product> Products => Set<Product>();
+    public DbSet<Category> Categories => Set<Category>();
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -22,6 +23,12 @@ public class ProductContext : DbContext
         if (Products.Any())
         {
             Products.RemoveRange(Products);
+            SaveChanges();
+        }
+
+        if (Categories.Any())
+        {
+            Categories.RemoveRange(Categories);
             SaveChanges();
         }
 
