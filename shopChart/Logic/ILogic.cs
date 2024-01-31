@@ -10,6 +10,7 @@ public interface IProductLogic
     Task AddNewProduct(ProductModel productToAdd);
     Task RemoveProduct(int id);
     Task UpdateProduct(ProductModel productToUpdate);
+    Task<ProductModel> InitializeProductModel();
 }
 
 public interface ICategoryLogic

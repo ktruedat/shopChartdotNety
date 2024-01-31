@@ -3,7 +3,7 @@ using shopChart.Data;
 
 namespace shopChart.Repository;
 
-public class CategoryRepository : ICategoryRepository
+public class CategoryRepository : ICategoryRepository, ICategoryRepositorySubset
 {
     private readonly ProductContext _context;
 

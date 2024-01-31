@@ -19,3 +19,9 @@ public interface ICategoryRepository
  Task UpdateCategoryAsync(Category category);
  Task RemoveCategoryAsync(int categoryIdToRemove);
 }
+
+public interface ICategoryRepositorySubset
+{
+ Task<List<Category>> GetAllCategoriesAsync();
+ Task<Category?> GetCategoryByIdAsync(int categoryId);
+}

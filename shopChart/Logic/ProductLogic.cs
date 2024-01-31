@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc.Rendering;
 using shopChart.Models;
 using shopChart.Repository;
 
@@ -6,10 +7,12 @@ namespace shopChart.Logic;
 public class ProductLogic : IProductLogic
 {
     private readonly IProductRepository _productRepository;
+    private readonly ICategoryRepositorySubset _categoryRepositorySubset;
 
-    public ProductLogic(IProductRepository productRepository)
+    public ProductLogic(IProductRepository productRepository, ICategoryRepositorySubset categoryRepositorySubset)
     {
         _productRepository = productRepository;
+        _categoryRepositorySubset = categoryRepositorySubset;
     }
 
     public async Task<List<ProductModel>> GetAllProducts()
@@ -40,4 +43,24 @@ public class ProductLogic : IProductLogic
         var productToSave = productToUpdate.ToProduct();
         await _productRepository.UpdateProductAsync(productToSave);
     }
+
+    public async Task<ProductModel> InitializeProductModel()
+    {
+        return new ProductModel
+        {
+            AvailableCategories = await GetAvailableCategoriesFromDb()
+        };
+    }
+
+    private async Task<List<SelectListItem>> GetAvailableCategoriesFromDb()
+    {
+        var categories = await _categoryRepositorySubset.GetAllCategoriesAsync();
+        var listToReturn = new List<SelectListItem> { new("None", "") };
+        var availableCategoryiesList =
+            categories.Select(category => new SelectListItem(category.Name, category.Id.ToString()));
+        listToReturn.AddRange(availableCategoryiesList);
+        return listToReturn;
+    }
+
+
 }
