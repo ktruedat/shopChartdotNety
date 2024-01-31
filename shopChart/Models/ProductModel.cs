@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using shopChart.Data;
 
 namespace shopChart.Models;
@@ -22,6 +23,8 @@ public class ProductModel
 
     [DisplayName("Category")]
     public string? CategoryName { get; set; }
+
+    public List<SelectListItem> AvailableCategories { get; set; }
 
 
 
