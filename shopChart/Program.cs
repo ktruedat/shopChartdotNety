@@ -11,6 +11,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ProductContext>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductLogic, ProductLogic>();
+builder.Services.AddScoped<ICategoryRepositorySubset, CategoryRepository>();
 
 var app = builder.Build();
 
