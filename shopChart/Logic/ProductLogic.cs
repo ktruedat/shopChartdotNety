@@ -8,11 +8,13 @@ public class ProductLogic : IProductLogic
 {
     private readonly IProductRepository _productRepository;
     private readonly ICategoryRepositorySubset _categoryRepositorySubset;
+    private readonly ProductValidator _validator;
 
-    public ProductLogic(IProductRepository productRepository, ICategoryRepositorySubset categoryRepositorySubset)
+    public ProductLogic(IProductRepository productRepository, ICategoryRepositorySubset categoryRepositorySubset, ProductValidator validator)
     {
         _productRepository = productRepository;
         _categoryRepositorySubset = categoryRepositorySubset;
+        _validator = validator;
     }
 
     public async Task<List<ProductModel>> GetAllProducts()
