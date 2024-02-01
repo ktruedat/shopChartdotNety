@@ -24,7 +24,7 @@ public class ProductModel
     [DisplayName("Category")]
     public string? CategoryName { get; set; }
 
-    public List<SelectListItem> AvailableCategories { get; set; }
+    public List<SelectListItem> AvailableCategories { get; set; } = new();
 
 
 

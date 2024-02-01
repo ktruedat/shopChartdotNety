@@ -43,7 +43,7 @@ public class ProductsController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,Name,Description,Price,IsActive")] ProductModel product)
+    public async Task<IActionResult> Create([Bind("Id,Name,CategoryId,Description,Price,IsActive")] ProductModel product)
     {
         if (ModelState.IsValid)
         {

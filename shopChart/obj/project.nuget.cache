@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "i4X/XewIzBWU+ibhKNBYIuffcXUrq8UVaZj0yMFAWaIk6G2O7Q8e1E+A3+iAdTXhipoA+pGRvow6gOiX++448g==",
+  "dgSpecHash": "gVebdejEXszNs//lu67goZNiFDvfQ6Mqp/U6BphZIN0cQ1Mmg+mWXKTwxOHWtICp+saikoGCLE5yrmSzcpUKQA==",
   "success": true,
   "projectFilePath": "/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/shopChart.csproj",
   "expectedPackageFiles": [
+    "/home/ktruedat/.nuget/packages/fluentvalidation/11.9.0/fluentvalidation.11.9.0.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/home/ktruedat/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.9.0/fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "/home/ktruedat/.nuget/packages/humanizer/2.14.1/humanizer.2.14.1.nupkg.sha512",
     "/home/ktruedat/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/ktruedat/.nuget/packages/humanizer.core.af/2.14.1/humanizer.core.af.2.14.1.nupkg.sha512",

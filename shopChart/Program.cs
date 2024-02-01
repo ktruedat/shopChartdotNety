@@ -1,12 +1,15 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using shopChart.Data;
 using shopChart.Logic;
 using shopChart.Repository;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the DI container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddValidatorsFromAssemblyContaining<ProductValidator>();
 
 builder.Services.AddDbContext<ProductContext>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
