@@ -63,6 +63,7 @@ public class ProductsController : Controller
         {
             var results = new ValidationResult(valEx.Errors);
             results.AddToModelState(ModelState, null);
+            return View(product);
         }
 
     }
