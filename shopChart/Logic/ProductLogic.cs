@@ -1,3 +1,4 @@
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using shopChart.Models;
 using shopChart.Repository;
@@ -31,6 +32,7 @@ public class ProductLogic : IProductLogic
 
     public async Task AddNewProduct(ProductModel productToAdd)
     {
+        await _validator.ValidateAndThrowAsync(productToAdd);
         var productToSave = productToAdd.ToProduct();
         await _productRepository.AddProductAsync(productToSave);
     }

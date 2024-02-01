@@ -1,6 +1,10 @@
+using System.ComponentModel.DataAnnotations;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using shopChart.Logic;
 using shopChart.Models;
+using ValidationException = FluentValidation.ValidationException;
+using ValidationResult = FluentValidation.Results.ValidationResult;
 
 namespace shopChart.Controllers;
 
@@ -45,13 +49,22 @@ public class ProductsController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create([Bind("Id,Name,CategoryId,Description,Price,IsActive")] ProductModel product)
     {
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid)
+        {
+            return View(product);
+        }
+
+        try
         {
             await _logic.AddNewProduct(product);
             return RedirectToAction(nameof(Index));
         }
+        catch (ValidationException valEx)
+        {
+            var results = new ValidationResult(valEx.Errors);
+            results.AddToModelState(ModelState, null);
+        }
 
-        return View(product);
     }
 
     public async Task<IActionResult> Edit(int? id)
