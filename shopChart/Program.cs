@@ -16,7 +16,7 @@ builder.Services.AddValidatorsFromAssemblyContaining<ProductValidator>();
 builder.Services.AddDbContext<ProductContext>();
 
 builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<shopChartContext>();
+    .AddEntityFrameworkStores<UserContext>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductLogic, ProductLogic>();
 builder.Services.AddScoped<ICategoryRepositorySubset, CategoryRepository>();
