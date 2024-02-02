@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using shopChart.Logic;
@@ -123,8 +122,4 @@ public class ProductsController : Controller
         return RedirectToAction(nameof(Index));
     }
 
-    private List<ProductModel>? GetProducts()
-    {
-        return new List<ProductModel>();
-    }
 }

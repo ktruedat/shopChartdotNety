@@ -3,15 +3,20 @@ using Microsoft.EntityFrameworkCore;
 using shopChart.Data;
 using shopChart.Logic;
 using shopChart.Repository;
+using Microsoft.AspNetCore.Identity;
 
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("shopChartContextConnection") ?? throw new InvalidOperationException("Connection string 'shopChartContextConnection' not found.");
 
 // Add services to the DI container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddValidatorsFromAssemblyContaining<ProductValidator>();
 
 builder.Services.AddDbContext<ProductContext>();
+
+builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<shopChartContext>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductLogic, ProductLogic>();
 builder.Services.AddScoped<ICategoryRepositorySubset, CategoryRepository>();
@@ -41,6 +46,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();;
 
 app.UseAuthorization();
 
