@@ -1,4 +1,5 @@
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using shopChart.Logic;
 using shopChart.Models;
@@ -7,6 +8,7 @@ using ValidationResult = FluentValidation.Results.ValidationResult;
 
 namespace shopChart.Controllers;
 
+[Authorize]
 public class ProductsController : Controller
 {
     private readonly IProductLogic _logic;
