@@ -12,7 +12,7 @@ public class UserContext : IdentityDbContext<User>
 
     public UserContext(IConfiguration config)
     {
-        _dbConnString = config.GetConnectionString("PostgreSQLConnString");
+        _dbConnString = config.GetConnectionString("PostgresUserContext");
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
