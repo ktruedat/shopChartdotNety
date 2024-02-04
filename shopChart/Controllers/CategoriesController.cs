@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using shopChart.Logic;
 using shopChart.Models;
 
 namespace shopChart.Controllers;
 
+[Authorize]
 public class CategoriesController : Controller
 {
     private readonly ICategoryLogic _logic;
