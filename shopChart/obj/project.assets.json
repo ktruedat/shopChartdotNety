@@ -11640,6 +11640,7 @@
       "FluentValidation.DependencyInjectionExtensions >= 11.9.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.26",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.26",
+      "Microsoft.EntityFrameworkCore >= 6.0.26",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.26",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.26",
       "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.26",
@@ -11654,11 +11655,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/shopChart.csproj",
+      "projectUniqueName": "/home/ktruedat/Projects/RiderProjects/shopChartdotNety/shopChart/shopChart.csproj",
       "projectName": "shopChart",
-      "projectPath": "/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/shopChart.csproj",
+      "projectPath": "/home/ktruedat/Projects/RiderProjects/shopChartdotNety/shopChart/shopChart.csproj",
       "packagesPath": "/home/ktruedat/.nuget/packages/",
-      "outputPath": "/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/obj/",
+      "outputPath": "/home/ktruedat/Projects/RiderProjects/shopChartdotNety/shopChart/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/ktruedat/.nuget/NuGet/NuGet.Config"
@@ -11702,6 +11703,10 @@
             "version": "[6.0.26, )"
           },
           "Microsoft.AspNetCore.Identity.UI": {
+            "target": "Package",
+            "version": "[6.0.26, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.26, )"
           },

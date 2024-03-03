@@ -410,16 +410,16 @@
     ]
   },
   "packageFolders": {
-    "/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/obj/.store/.stage/oeabvpif.cy4": {}
+    "/home/ktruedat/Projects/RiderProjects/shopChartdotNety/shopChart/obj/.store/.stage/td1lpjt1.esr": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/tmp/c5c363d0-b0da-42ac-bcf0-97b2b9b5bbc4/restore.csproj",
+      "projectUniqueName": "/tmp/cb00ec44-ded1-4cc4-bdc4-2831e27992b2/restore.csproj",
       "projectName": "restore",
-      "projectPath": "/tmp/c5c363d0-b0da-42ac-bcf0-97b2b9b5bbc4/restore.csproj",
-      "packagesPath": "/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/obj/.store/.stage/oeabvpif.cy4",
-      "outputPath": "/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/obj/.store/.stage/oeabvpif.cy4/",
+      "projectPath": "/tmp/cb00ec44-ded1-4cc4-bdc4-2831e27992b2/restore.csproj",
+      "packagesPath": "/home/ktruedat/Projects/RiderProjects/shopChartdotNety/shopChart/obj/.store/.stage/td1lpjt1.esr",
+      "outputPath": "/home/ktruedat/Projects/RiderProjects/shopChartdotNety/shopChart/obj/.store/.stage/td1lpjt1.esr/",
       "projectStyle": "DotnetToolReference",
       "configFilePaths": [
         "/home/ktruedat/.nuget/NuGet/NuGet.Config"
@@ -461,7 +461,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/6.0.125/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/6.0.126/RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

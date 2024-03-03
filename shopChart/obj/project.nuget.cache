@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J3yCGqKY758gXrl9/rXj0MY/0bOHvm0GTczmlJpReeYEs4Yzqcp1PwWLXPeBnK7skElJuOWPqjdNG439mpuT+w==",
+  "dgSpecHash": "7rmA06UMaXGT+wWeZZPc1DK/7TYzVM0PO30oTq5mpPlRdPFZzTd7ycKe27a8K235WFbK9XsYy6NjbY5GIHgIvw==",
   "success": true,
-  "projectFilePath": "/home/ktruedat/Projects/RiderProjects/shopChart/shopChart/shopChart.csproj",
+  "projectFilePath": "/home/ktruedat/Projects/RiderProjects/shopChartdotNety/shopChart/shopChart.csproj",
   "expectedPackageFiles": [
     "/home/ktruedat/.nuget/packages/fluentvalidation/11.9.0/fluentvalidation.11.9.0.nupkg.sha512",
     "/home/ktruedat/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
