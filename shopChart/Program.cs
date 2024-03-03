@@ -1,8 +1,6 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using shopChart.Data;
-using shopChart.Logic;
-using shopChart.Repository;
 using Microsoft.AspNetCore.Identity;
 using shopChart.Areas.Identity.Data;
 
@@ -11,7 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the DI container
 builder.Services.AddControllersWithViews();
-builder.Services.AddValidatorsFromAssemblyContaining<ProductValidator>();
 
 builder.Services.AddDbContext<UserContext>();
 
@@ -19,9 +16,6 @@ builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfi
     .AddEntityFrameworkStores<UserContext>();
 
 builder.Services.AddDbContext<ProductContext>();
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped<IProductLogic, ProductLogic>();
-builder.Services.AddScoped<ICategoryRepositorySubset, CategoryRepository>();
 
 var app = builder.Build();
 
@@ -34,10 +28,6 @@ using (var scope = app.Services.CreateScope())
     var userCtx = services.GetRequiredService<UserContext>();
     userCtx.Database.Migrate();
 
-    if (app.Environment.IsDevelopment())
-    {
-        ctx.SeedInitialData();
-    }
 }
 
 // Configure the HTTP request pipeline.

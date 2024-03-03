@@ -24,60 +24,182 @@ namespace shopChart.Migrations
 
             modelBuilder.Entity("shopChart.Data.Category", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CategoryID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("CategoryID");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("CategoryID"));
 
-                    b.Property<string>("Name")
+                    b.Property<string>("CategoryName")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("CategoryName");
 
-                    b.HasKey("Id");
+                    b.HasKey("CategoryID");
 
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("shopChart.Data.Product", b =>
+            modelBuilder.Entity("shopChart.Data.Customer", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CustomerID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("CustomerID");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("CustomerID"));
 
-                    b.Property<int?>("CategoryId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Description")
+                    b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("boolean");
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("Email");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("Name");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("numeric");
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)")
+                        .HasColumnName("Phone");
 
-                    b.HasKey("Id");
+                    b.HasKey("CustomerID");
 
-                    b.HasIndex("CategoryId");
+                    b.ToTable("Customers");
+                });
 
-                    b.ToTable("Products");
+            modelBuilder.Entity("shopChart.Data.Producer", b =>
+                {
+                    b.Property<int>("ProducerID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("ProducerID");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ProducerID"));
+
+                    b.Property<string>("ProducerLocation")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("ProducerLocation");
+
+                    b.Property<string>("ProducerName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("ProducerName");
+
+                    b.HasKey("ProducerID");
+
+                    b.ToTable("Producers");
                 });
 
             modelBuilder.Entity("shopChart.Data.Product", b =>
                 {
-                    b.HasOne("shopChart.Data.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId");
+                    b.Property<int>("ProductID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("ProductID");
 
-                    b.Navigation("Category");
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ProductID"));
+
+                    b.Property<int>("CategoryID")
+                        .HasColumnType("integer")
+                        .HasColumnName("CategoryID");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("Name");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("double precision")
+                        .HasColumnName("Price");
+
+                    b.Property<int>("ProducerID")
+                        .HasColumnType("integer")
+                        .HasColumnName("ProducerID");
+
+                    b.HasKey("ProductID");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("shopChart.Data.Promotion", b =>
+                {
+                    b.Property<int>("PromotionID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("PromotionID");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("PromotionID"));
+
+                    b.Property<double>("DiscountPercentage")
+                        .HasColumnType("double precision")
+                        .HasColumnName("DiscountPercentage");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("EndDate");
+
+                    b.Property<string>("PromotionName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("PromotionName");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("StartDate");
+
+                    b.HasKey("PromotionID");
+
+                    b.ToTable("Promotions");
+                });
+
+            modelBuilder.Entity("shopChart.Data.Sale", b =>
+                {
+                    b.Property<int>("SaleID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("SaleID");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("SaleID"));
+
+                    b.Property<double>("Amount")
+                        .HasColumnType("double precision")
+                        .HasColumnName("Amount");
+
+                    b.Property<int>("CustomerID")
+                        .HasColumnType("integer")
+                        .HasColumnName("CustomerID");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("Date");
+
+                    b.Property<int>("ProductID")
+                        .HasColumnType("integer")
+                        .HasColumnName("ProductID");
+
+                    b.Property<int>("PromotionID")
+                        .HasColumnType("integer")
+                        .HasColumnName("PromotionID");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer")
+                        .HasColumnName("Quantity");
+
+                    b.HasKey("SaleID");
+
+                    b.ToTable("Sales");
                 });
 #pragma warning restore 612, 618
         }
